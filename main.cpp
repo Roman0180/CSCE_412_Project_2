@@ -1,4 +1,5 @@
 #include <iostream>
+#include <numeric>
 #include "LoadBalancer.cpp"
 using namespace std; 
 
@@ -9,6 +10,7 @@ bool getRandomBool() {
 }
 
 int main(){
+    srand(time(0));
     int numWebServers; 
     cout << "Enter the number of desired servers: "; 
     cin >> numWebServers; 
@@ -19,18 +21,19 @@ int main(){
     LoadBalancer loadBalancer(totalClockCycles); 
     for(int i = 0; i < numWebServers; i++) loadBalancer.webServers.push_back(WebServer()); 
     for(int i = 0; i < numWebServers * 20; i++) loadBalancer.queue.push(Request(2, 500)); 
+    loadBalancer.numRequestsReceived = loadBalancer.queue.size(); 
     while(!loadBalancer.queue.empty() && loadBalancer.currClockCycle <= loadBalancer.maxClockCycles){
         loadBalancer.currClockCycle += 2; 
         // have the load balancer send all requests to available webservers
         loadBalancer.sendToWebserver();
         // check to see if any requests have finished
-        loadBalancer.checkForResponse(); 
+        for(int i = 0; i < loadBalancer.webServers.size(); i++) loadBalancer.webServers.at(i).replyToClient(loadBalancer.currClockCycle, i + 1); 
         // check to see if any new requests have arrived
         for(int i = 0; i < 5; i++){
             if (getRandomBool()){ // randomly choose if a new element should be added
                 loadBalancer.queue.push(Request(2, 500));
+                loadBalancer.numRequestsReceived += 1; 
             }
         }
     }
-    cout << "finished" << endl; 
 }
