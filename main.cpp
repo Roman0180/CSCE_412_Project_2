@@ -21,19 +21,17 @@ int main(){
     // set up the LoadBalancer with the appropriate number of web servers, total clock cycles, and a full queue
     LoadBalancer loadBalancer(totalClockCycles); 
     for(int i = 0; i < numWebServers; i++) loadBalancer.webServers.push_back(WebServer()); 
-    for(int i = 0; i < numWebServers * 20; i++) loadBalancer.queue.push(Request(0, loadBalancer.maxClockCycles)); 
-    while(!loadBalancer.queue.empty()){
+    for(int i = 0; i < numWebServers * 20; i++) loadBalancer.queue.push(Request(2, 500)); 
+    while(!loadBalancer.queue.empty() || loadBalancer.currClockCycle >= loadBalancer.maxClockCycles){
         // have the load balancer send all requests to available webservers
         loadBalancer.sendToWebserver();
         // check to see if any new requests have arrived
         if (getRandomBoolean()){ // randomly choose if a new element should be added
-            loadBalancer.queue.push(Request(loadBalancer.currClockCycle, loadBalancer.maxClockCycles));
+            loadBalancer.queue.push(Request(2, 500));
         }
         loadBalancer.queue.pop();
     }
     cout << "finished" << endl; 
-
-//QUESTIONS: what if max clock cycle -1 is selected for multiple packets 
     
 
 }
