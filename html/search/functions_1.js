@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sendtowebserver_0',['sendToWebserver',['../class_load_balancer.html#a7ea541dfd2fd3b135c9252e84500f021',1,'LoadBalancer']]]
+  ['loadbalancer_0',['LoadBalancer',['../class_load_balancer.html#a5956efdafb49ee9249cbf81b66de0eb8',1,'LoadBalancer']]]
 ];

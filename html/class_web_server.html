@@ -76,25 +76,87 @@ $(function() {
   <div class="headertitle"><div class="title">WebServer Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>This class represents a web server This class has fields to store the number of active requests, the finished time of the current request, the current request, and the number of finished requests. It also has a constructor to initialize these fields and a method to reply to a client.  
+ <a href="class_web_server.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3feb87c37d51451028f52bfdb773d79d"><td class="memItemLeft" align="right" valign="top"><a id="a3feb87c37d51451028f52bfdb773d79d" name="a3feb87c37d51451028f52bfdb773d79d"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><b>response</b> (<a class="el" href="class_request.html">Request</a> requestPacket)</td></tr>
-<tr class="separator:a3feb87c37d51451028f52bfdb773d79d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad053f4e1808a3c10c7522d0dbbbc031a"><td class="memItemLeft" align="right" valign="top"><a id="ad053f4e1808a3c10c7522d0dbbbc031a" name="ad053f4e1808a3c10c7522d0dbbbc031a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>WebServer</b> ()</td></tr>
+<tr class="memdesc:ad053f4e1808a3c10c7522d0dbbbc031a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Web Server object This constructor initializes the activeRequests, finishedTime, currRequest, and finishedRequests fields to 0, 0, an empty <a class="el" href="class_request.html" title="A class representing a request. This class has fields for the incoming and outgoing IP addresses,...">Request</a> object, and 0, respectively. <br /></td></tr>
+<tr class="separator:ad053f4e1808a3c10c7522d0dbbbc031a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adeeecf4c5aaf8ec49e9ea87be4635639"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_web_server.html#adeeecf4c5aaf8ec49e9ea87be4635639">replyToClient</a> (int currClockCycle, int serverNum)</td></tr>
+<tr class="memdesc:adeeecf4c5aaf8ec49e9ea87be4635639"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replies to a client This function prints a message indicating that the server has finished processing a request if the current clock cycle is greater than the finished time of the current request and the server has active requests. It also decreases the activeRequests field by 1, sets the currRequest field to an empty <a class="el" href="class_request.html" title="A class representing a request. This class has fields for the incoming and outgoing IP addresses,...">Request</a> object, and increases the finishedRequests field by 1.  <br /></td></tr>
+<tr class="separator:adeeecf4c5aaf8ec49e9ea87be4635639"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:aa8a5d26f5d7063f9b333a7c046026e94"><td class="memItemLeft" align="right" valign="top"><a id="aa8a5d26f5d7063f9b333a7c046026e94" name="aa8a5d26f5d7063f9b333a7c046026e94"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>activeRequests</b></td></tr>
+<tr class="memdesc:aa8a5d26f5d7063f9b333a7c046026e94"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of active requests. <br /></td></tr>
 <tr class="separator:aa8a5d26f5d7063f9b333a7c046026e94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6d4592c9d3b52e2f4557b4cd285b8f6"><td class="memItemLeft" align="right" valign="top"><a id="ae6d4592c9d3b52e2f4557b4cd285b8f6" name="ae6d4592c9d3b52e2f4557b4cd285b8f6"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>finishedTime</b></td></tr>
+<tr class="memdesc:ae6d4592c9d3b52e2f4557b4cd285b8f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The finished time of the current request. <br /></td></tr>
 <tr class="separator:ae6d4592c9d3b52e2f4557b4cd285b8f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1130703517f2443901a21877f771f016"><td class="memItemLeft" align="right" valign="top"><a id="a1130703517f2443901a21877f771f016" name="a1130703517f2443901a21877f771f016"></a>
 <a class="el" href="class_request.html">Request</a>&#160;</td><td class="memItemRight" valign="bottom"><b>currRequest</b></td></tr>
+<tr class="memdesc:a1130703517f2443901a21877f771f016"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current request. <br /></td></tr>
 <tr class="separator:a1130703517f2443901a21877f771f016"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6588837913861870ba161d88c74f1a37"><td class="memItemLeft" align="right" valign="top"><a id="a6588837913861870ba161d88c74f1a37" name="a6588837913861870ba161d88c74f1a37"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>finishedRequests</b></td></tr>
+<tr class="memdesc:a6588837913861870ba161d88c74f1a37"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of finished requests. <br /></td></tr>
+<tr class="separator:a6588837913861870ba161d88c74f1a37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class represents a web server This class has fields to store the number of active requests, the finished time of the current request, the current request, and the number of finished requests. It also has a constructor to initialize these fields and a method to reply to a client. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="adeeecf4c5aaf8ec49e9ea87be4635639" name="adeeecf4c5aaf8ec49e9ea87be4635639"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adeeecf4c5aaf8ec49e9ea87be4635639">&#9670;&#160;</a></span>replyToClient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WebServer::replyToClient </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>currClockCycle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>serverNum</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Replies to a client This function prints a message indicating that the server has finished processing a request if the current clock cycle is greater than the finished time of the current request and the server has active requests. It also decreases the activeRequests field by 1, sets the currRequest field to an empty <a class="el" href="class_request.html" title="A class representing a request. This class has fields for the incoming and outgoing IP addresses,...">Request</a> object, and increases the finishedRequests field by 1. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">currClockCycle</td><td>The current clock cycle </td></tr>
+    <tr><td class="paramname">serverNum</td><td>The number of the server </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>WebServer.cpp</li>
 </ul>

@@ -5,29 +5,41 @@
 \item 
 \mbox{\Hypertarget{class_load_balancer_a5956efdafb49ee9249cbf81b66de0eb8}\label{class_load_balancer_a5956efdafb49ee9249cbf81b66de0eb8}} 
 {\bfseries Load\+Balancer} (int max\+Time)
-\item 
-\mbox{\Hypertarget{class_load_balancer_a7ea541dfd2fd3b135c9252e84500f021}\label{class_load_balancer_a7ea541dfd2fd3b135c9252e84500f021}} 
-void {\bfseries send\+To\+Webserver} ()
-\begin{DoxyCompactList}\small\item\em This function is responsible for sending a response to the web server and managing the reply. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_load_balancer_a774622c2ec4963096b0632d453662263}\label{class_load_balancer_a774622c2ec4963096b0632d453662263}} 
-void {\bfseries check\+For\+Response} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{class_load_balancer}{Load\+Balancer}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_load_balancer_a7ea541dfd2fd3b135c9252e84500f021}{send\+To\+Webserver}} ()
+\begin{DoxyCompactList}\small\item\em Sends a request to an available web server and manages the reply. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_load_balancer_ab281cbd044ea7ad3f4c0dfa0fef6614f}\label{class_load_balancer_ab281cbd044ea7ad3f4c0dfa0fef6614f}} 
 queue$<$ \mbox{\hyperlink{class_request}{Request}} $>$ {\bfseries queue}
-\item 
+\begin{DoxyCompactList}\small\item\em A queue to store incoming requests. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_load_balancer_a92410471e31c50cbbb8210801d4ee647}\label{class_load_balancer_a92410471e31c50cbbb8210801d4ee647}} 
 vector$<$ \mbox{\hyperlink{class_web_server}{Web\+Server}} $>$ {\bfseries web\+Servers}
-\item 
+\begin{DoxyCompactList}\small\item\em A vector of web servers. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_load_balancer_a66d616513547519ff9fedf180017b1ed}\label{class_load_balancer_a66d616513547519ff9fedf180017b1ed}} 
 int {\bfseries curr\+Clock\+Cycle}
-\item 
+\begin{DoxyCompactList}\small\item\em The current clock cycle. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_load_balancer_a64c41b4f7d2e6e2b7b5e68e5db5e24a6}\label{class_load_balancer_a64c41b4f7d2e6e2b7b5e68e5db5e24a6}} 
 int {\bfseries max\+Clock\+Cycles}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The maximum number of clock cycles allowed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_load_balancer_aeeb39c45d72353f186f729c290b0daf7}\label{class_load_balancer_aeeb39c45d72353f186f729c290b0daf7}} 
+int {\bfseries num\+Requests\+Received}
+\begin{DoxyCompactList}\small\item\em The number of requests received. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_load_balancer_a7ea541dfd2fd3b135c9252e84500f021}\label{class_load_balancer_a7ea541dfd2fd3b135c9252e84500f021}} 
+\index{LoadBalancer@{LoadBalancer}!sendToWebserver@{sendToWebserver}}
+\index{sendToWebserver@{sendToWebserver}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{sendToWebserver()}{sendToWebserver()}}
+{\footnotesize\ttfamily void Load\+Balancer\+::send\+To\+Webserver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sends a request to an available web server and manages the reply. 
+
+This function iterates through the web servers in the web\+Servers vector. If a web server is available (i.\+e. has no active requests), it sends a request to it by popping it from the queue and setting the active\+Requests and curr\+Request fields of the web server. It also sets the finished\+Time field of the web server to the current clock cycle plus the time it takes to process the request. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

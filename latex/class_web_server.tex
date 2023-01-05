@@ -1,23 +1,56 @@
 \hypertarget{class_web_server}{}\doxysection{Web\+Server Class Reference}
 \label{class_web_server}\index{WebServer@{WebServer}}
+
+
+This class represents a web server This class has fields to store the number of active requests, the finished time of the current request, the current request, and the number of finished requests. It also has a constructor to initialize these fields and a method to reply to a client.  
+
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_web_server_a3feb87c37d51451028f52bfdb773d79d}\label{class_web_server_a3feb87c37d51451028f52bfdb773d79d}} 
-string {\bfseries response} (\mbox{\hyperlink{class_request}{Request}} request\+Packet)
-\end{DoxyCompactItemize}
+\mbox{\Hypertarget{class_web_server_ad053f4e1808a3c10c7522d0dbbbc031a}\label{class_web_server_ad053f4e1808a3c10c7522d0dbbbc031a}} 
+{\bfseries Web\+Server} ()
+\begin{DoxyCompactList}\small\item\em Construct a new Web Server object This constructor initializes the active\+Requests, finished\+Time, curr\+Request, and finished\+Requests fields to 0, 0, an empty \mbox{\hyperlink{class_request}{Request}} object, and 0, respectively. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_web_server_adeeecf4c5aaf8ec49e9ea87be4635639}{reply\+To\+Client}} (int curr\+Clock\+Cycle, int server\+Num)
+\begin{DoxyCompactList}\small\item\em Replies to a client This function prints a message indicating that the server has finished processing a request if the current clock cycle is greater than the finished time of the current request and the server has active requests. It also decreases the active\+Requests field by 1, sets the curr\+Request field to an empty \mbox{\hyperlink{class_request}{Request}} object, and increases the finished\+Requests field by 1. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_web_server_aa8a5d26f5d7063f9b333a7c046026e94}\label{class_web_server_aa8a5d26f5d7063f9b333a7c046026e94}} 
 int {\bfseries active\+Requests}
-\item 
+\begin{DoxyCompactList}\small\item\em The number of active requests. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_web_server_ae6d4592c9d3b52e2f4557b4cd285b8f6}\label{class_web_server_ae6d4592c9d3b52e2f4557b4cd285b8f6}} 
 int {\bfseries finished\+Time}
-\item 
+\begin{DoxyCompactList}\small\item\em The finished time of the current request. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_web_server_a1130703517f2443901a21877f771f016}\label{class_web_server_a1130703517f2443901a21877f771f016}} 
 \mbox{\hyperlink{class_request}{Request}} {\bfseries curr\+Request}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The current request. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_web_server_a6588837913861870ba161d88c74f1a37}\label{class_web_server_a6588837913861870ba161d88c74f1a37}} 
+int {\bfseries finished\+Requests}
+\begin{DoxyCompactList}\small\item\em The number of finished requests. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class represents a web server This class has fields to store the number of active requests, the finished time of the current request, the current request, and the number of finished requests. It also has a constructor to initialize these fields and a method to reply to a client. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_web_server_adeeecf4c5aaf8ec49e9ea87be4635639}\label{class_web_server_adeeecf4c5aaf8ec49e9ea87be4635639}} 
+\index{WebServer@{WebServer}!replyToClient@{replyToClient}}
+\index{replyToClient@{replyToClient}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{replyToClient()}{replyToClient()}}
+{\footnotesize\ttfamily void Web\+Server\+::reply\+To\+Client (\begin{DoxyParamCaption}\item[{int}]{curr\+Clock\+Cycle,  }\item[{int}]{server\+Num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Replies to a client This function prints a message indicating that the server has finished processing a request if the current clock cycle is greater than the finished time of the current request and the server has active requests. It also decreases the active\+Requests field by 1, sets the curr\+Request field to an empty \mbox{\hyperlink{class_request}{Request}} object, and increases the finished\+Requests field by 1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em curr\+Clock\+Cycle} & The current clock cycle \\
+\hline
+{\em server\+Num} & The number of the server \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

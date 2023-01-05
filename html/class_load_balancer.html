@@ -81,30 +81,64 @@ $(function() {
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5956efdafb49ee9249cbf81b66de0eb8"><td class="memItemLeft" align="right" valign="top"><a id="a5956efdafb49ee9249cbf81b66de0eb8" name="a5956efdafb49ee9249cbf81b66de0eb8"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>LoadBalancer</b> (int maxTime)</td></tr>
+<tr class="memdesc:a5956efdafb49ee9249cbf81b66de0eb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_load_balancer.html">LoadBalancer</a> object. <br /></td></tr>
 <tr class="separator:a5956efdafb49ee9249cbf81b66de0eb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ea541dfd2fd3b135c9252e84500f021"><td class="memItemLeft" align="right" valign="top"><a id="a7ea541dfd2fd3b135c9252e84500f021" name="a7ea541dfd2fd3b135c9252e84500f021"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>sendToWebserver</b> ()</td></tr>
-<tr class="memdesc:a7ea541dfd2fd3b135c9252e84500f021"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is responsible for sending a response to the web server and managing the reply. <br /></td></tr>
+<tr class="memitem:a7ea541dfd2fd3b135c9252e84500f021"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_load_balancer.html#a7ea541dfd2fd3b135c9252e84500f021">sendToWebserver</a> ()</td></tr>
+<tr class="memdesc:a7ea541dfd2fd3b135c9252e84500f021"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a request to an available web server and manages the reply.  <br /></td></tr>
 <tr class="separator:a7ea541dfd2fd3b135c9252e84500f021"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a774622c2ec4963096b0632d453662263"><td class="memItemLeft" align="right" valign="top"><a id="a774622c2ec4963096b0632d453662263" name="a774622c2ec4963096b0632d453662263"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>checkForResponse</b> ()</td></tr>
-<tr class="separator:a774622c2ec4963096b0632d453662263"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ab281cbd044ea7ad3f4c0dfa0fef6614f"><td class="memItemLeft" align="right" valign="top"><a id="ab281cbd044ea7ad3f4c0dfa0fef6614f" name="ab281cbd044ea7ad3f4c0dfa0fef6614f"></a>
 queue&lt; <a class="el" href="class_request.html">Request</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>queue</b></td></tr>
+<tr class="memdesc:ab281cbd044ea7ad3f4c0dfa0fef6614f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A queue to store incoming requests. <br /></td></tr>
 <tr class="separator:ab281cbd044ea7ad3f4c0dfa0fef6614f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92410471e31c50cbbb8210801d4ee647"><td class="memItemLeft" align="right" valign="top"><a id="a92410471e31c50cbbb8210801d4ee647" name="a92410471e31c50cbbb8210801d4ee647"></a>
 vector&lt; <a class="el" href="class_web_server.html">WebServer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>webServers</b></td></tr>
+<tr class="memdesc:a92410471e31c50cbbb8210801d4ee647"><td class="mdescLeft">&#160;</td><td class="mdescRight">A vector of web servers. <br /></td></tr>
 <tr class="separator:a92410471e31c50cbbb8210801d4ee647"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66d616513547519ff9fedf180017b1ed"><td class="memItemLeft" align="right" valign="top"><a id="a66d616513547519ff9fedf180017b1ed" name="a66d616513547519ff9fedf180017b1ed"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>currClockCycle</b></td></tr>
+<tr class="memdesc:a66d616513547519ff9fedf180017b1ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current clock cycle. <br /></td></tr>
 <tr class="separator:a66d616513547519ff9fedf180017b1ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64c41b4f7d2e6e2b7b5e68e5db5e24a6"><td class="memItemLeft" align="right" valign="top"><a id="a64c41b4f7d2e6e2b7b5e68e5db5e24a6" name="a64c41b4f7d2e6e2b7b5e68e5db5e24a6"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>maxClockCycles</b></td></tr>
+<tr class="memdesc:a64c41b4f7d2e6e2b7b5e68e5db5e24a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum number of clock cycles allowed. <br /></td></tr>
 <tr class="separator:a64c41b4f7d2e6e2b7b5e68e5db5e24a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeeb39c45d72353f186f729c290b0daf7"><td class="memItemLeft" align="right" valign="top"><a id="aeeb39c45d72353f186f729c290b0daf7" name="aeeb39c45d72353f186f729c290b0daf7"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>numRequestsReceived</b></td></tr>
+<tr class="memdesc:aeeb39c45d72353f186f729c290b0daf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of requests received. <br /></td></tr>
+<tr class="separator:aeeb39c45d72353f186f729c290b0daf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7ea541dfd2fd3b135c9252e84500f021" name="a7ea541dfd2fd3b135c9252e84500f021"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ea541dfd2fd3b135c9252e84500f021">&#9670;&#160;</a></span>sendToWebserver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LoadBalancer::sendToWebserver </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sends a request to an available web server and manages the reply. </p>
+<p>This function iterates through the web servers in the webServers vector. If a web server is available (i.e. has no active requests), it sends a request to it by popping it from the queue and setting the activeRequests and currRequest fields of the web server. It also sets the finishedTime field of the web server to the current clock cycle plus the time it takes to process the request. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>LoadBalancer.cpp</li>
 </ul>
