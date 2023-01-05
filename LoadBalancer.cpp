@@ -1,14 +1,10 @@
 #include <string>
 #include <queue>
 #include <vector>
-#include <algorithm>  // for std::min_element()
 #include <iostream>
 #include "WebServer.cpp"
 
 using namespace std; 
-bool compareWebServers(WebServer a, WebServer b) {
-   return a.activeRequests < b.activeRequests;
-}
 class LoadBalancer{
     public:
         queue<Request> queue;  
@@ -27,6 +23,7 @@ class LoadBalancer{
                     this->queue.pop(); 
                     // show that the server is now busy
                     this->webServers.at(i).activeRequests += 1; 
+                    this->webServers.at(i).currRequest = request; 
                     this->webServers.at(i).finishedTime = this->currClockCycle + request.timeToProcess; 
                 }
             }
@@ -35,8 +32,9 @@ class LoadBalancer{
         void checkForResponse(){
             for(int i = 0; i < this->webServers.size(); i++){
                 if(this->currClockCycle > this->webServers.at(i).finishedTime && this->webServers.at(i).activeRequests > 0){
-                    cout << i << " Server finished at clock cycle " << this->webServers.at(i).finishedTime << endl;
-                    this->webServers.at(i).activeRequests -= 1;  
+                    cout << i << " Server finished at clock cycle " << this->webServers.at(i).finishedTime << " from " << this->webServers.at(i).currRequest.ipIn << " to " << this->webServers.at(i).currRequest.ipOut << endl;
+                    this->webServers.at(i).activeRequests -= 1;
+                    this->webServers.at(i).currRequest = Request();   
                 }
             }
         }
