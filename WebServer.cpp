@@ -6,9 +6,12 @@ using namespace std;
 class WebServer{
     public: 
         int activeRequests; 
+        int finishedTime; 
         WebServer() : activeRequests(0) {}; 
         string response(Request requestPacket){
+
             // after time has elapsed in the request packet, flip the request to be empty and send the response to the server
+            this->activeRequests -= 1; 
             return ""; 
         }
 }; 
