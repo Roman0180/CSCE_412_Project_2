@@ -12,7 +12,6 @@ class LoadBalancer{
         int currClockCycle;
         int maxClockCycles; 
         LoadBalancer(int maxTime) : currClockCycle(0), maxClockCycles(maxTime) {}; 
-
         /// @brief This function is responsible for sending a response to the web server and managing the reply
         void sendToWebserver(){
             // if a webserver is available, send a request to it
@@ -32,13 +31,10 @@ class LoadBalancer{
         void checkForResponse(){
             for(int i = 0; i < this->webServers.size(); i++){
                 if(this->currClockCycle > this->webServers.at(i).finishedTime && this->webServers.at(i).activeRequests > 0){
-                    cout << i << " Server finished at clock cycle " << this->webServers.at(i).finishedTime << " from " << this->webServers.at(i).currRequest.ipIn << " to " << this->webServers.at(i).currRequest.ipOut << endl;
+                    cout << " Server " << i + 1 <<  " finished at clock cycle " << this->webServers.at(i).finishedTime << " from " << this->webServers.at(i).currRequest.ipIn << " to " << this->webServers.at(i).currRequest.ipOut << endl;
                     this->webServers.at(i).activeRequests -= 1;
                     this->webServers.at(i).currRequest = Request();   
                 }
             }
         }
-        
-        
-
 }; 

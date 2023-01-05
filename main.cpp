@@ -31,10 +31,6 @@ int main(){
                 loadBalancer.queue.push(Request(2, 500));
             }
         }
-        
-        
     }
     cout << "finished" << endl; 
-    
-
 }
