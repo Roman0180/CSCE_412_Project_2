@@ -11,7 +11,7 @@ This class represents a web server This class has fields to store the number of 
 \mbox{\Hypertarget{class_web_server_ad053f4e1808a3c10c7522d0dbbbc031a}\label{class_web_server_ad053f4e1808a3c10c7522d0dbbbc031a}} 
 {\bfseries Web\+Server} ()
 \begin{DoxyCompactList}\small\item\em Construct a new Web Server object This constructor initializes the active\+Requests, finished\+Time, curr\+Request, and finished\+Requests fields to 0, 0, an empty \mbox{\hyperlink{class_request}{Request}} object, and 0, respectively. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_web_server_adeeecf4c5aaf8ec49e9ea87be4635639}{reply\+To\+Client}} (int curr\+Clock\+Cycle, int server\+Num)
+void \mbox{\hyperlink{class_web_server_a96304d6dee3f06fda9fa5c41902e0b2b}{reply\+To\+Client}} (int curr\+Clock\+Cycle, int server\+Num, int max\+Time)
 \begin{DoxyCompactList}\small\item\em Replies to a client This function prints a message indicating that the server has finished processing a request if the current clock cycle is greater than the finished time of the current request and the server has active requests. It also decreases the active\+Requests field by 1, sets the curr\+Request field to an empty \mbox{\hyperlink{class_request}{Request}} object, and increases the finished\+Requests field by 1. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -34,11 +34,11 @@ int {\bfseries finished\+Requests}
 This class represents a web server This class has fields to store the number of active requests, the finished time of the current request, the current request, and the number of finished requests. It also has a constructor to initialize these fields and a method to reply to a client. 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_web_server_adeeecf4c5aaf8ec49e9ea87be4635639}\label{class_web_server_adeeecf4c5aaf8ec49e9ea87be4635639}} 
+\mbox{\Hypertarget{class_web_server_a96304d6dee3f06fda9fa5c41902e0b2b}\label{class_web_server_a96304d6dee3f06fda9fa5c41902e0b2b}} 
 \index{WebServer@{WebServer}!replyToClient@{replyToClient}}
 \index{replyToClient@{replyToClient}!WebServer@{WebServer}}
 \doxysubsubsection{\texorpdfstring{replyToClient()}{replyToClient()}}
-{\footnotesize\ttfamily void Web\+Server\+::reply\+To\+Client (\begin{DoxyParamCaption}\item[{int}]{curr\+Clock\+Cycle,  }\item[{int}]{server\+Num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void Web\+Server\+::reply\+To\+Client (\begin{DoxyParamCaption}\item[{int}]{curr\+Clock\+Cycle,  }\item[{int}]{server\+Num,  }\item[{int}]{max\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -49,6 +49,8 @@ Replies to a client This function prints a message indicating that the server ha
 {\em curr\+Clock\+Cycle} & The current clock cycle \\
 \hline
 {\em server\+Num} & The number of the server \\
+\hline
+{\em max\+Time} & The maximum number of clock cycles as specified by the user \\
 \hline
 \end{DoxyParams}
 

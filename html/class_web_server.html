@@ -86,9 +86,9 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>WebServer</b> ()</td></tr>
 <tr class="memdesc:ad053f4e1808a3c10c7522d0dbbbc031a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Web Server object This constructor initializes the activeRequests, finishedTime, currRequest, and finishedRequests fields to 0, 0, an empty <a class="el" href="class_request.html" title="A class representing a request. This class has fields for the incoming and outgoing IP addresses,...">Request</a> object, and 0, respectively. <br /></td></tr>
 <tr class="separator:ad053f4e1808a3c10c7522d0dbbbc031a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adeeecf4c5aaf8ec49e9ea87be4635639"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_web_server.html#adeeecf4c5aaf8ec49e9ea87be4635639">replyToClient</a> (int currClockCycle, int serverNum)</td></tr>
-<tr class="memdesc:adeeecf4c5aaf8ec49e9ea87be4635639"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replies to a client This function prints a message indicating that the server has finished processing a request if the current clock cycle is greater than the finished time of the current request and the server has active requests. It also decreases the activeRequests field by 1, sets the currRequest field to an empty <a class="el" href="class_request.html" title="A class representing a request. This class has fields for the incoming and outgoing IP addresses,...">Request</a> object, and increases the finishedRequests field by 1.  <br /></td></tr>
-<tr class="separator:adeeecf4c5aaf8ec49e9ea87be4635639"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96304d6dee3f06fda9fa5c41902e0b2b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_web_server.html#a96304d6dee3f06fda9fa5c41902e0b2b">replyToClient</a> (int currClockCycle, int serverNum, int maxTime)</td></tr>
+<tr class="memdesc:a96304d6dee3f06fda9fa5c41902e0b2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replies to a client This function prints a message indicating that the server has finished processing a request if the current clock cycle is greater than the finished time of the current request and the server has active requests. It also decreases the activeRequests field by 1, sets the currRequest field to an empty <a class="el" href="class_request.html" title="A class representing a request. This class has fields for the incoming and outgoing IP addresses,...">Request</a> object, and increases the finishedRequests field by 1.  <br /></td></tr>
+<tr class="separator:a96304d6dee3f06fda9fa5c41902e0b2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -112,8 +112,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>finishedRequests</b></
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class represents a web server This class has fields to store the number of active requests, the finished time of the current request, the current request, and the number of finished requests. It also has a constructor to initialize these fields and a method to reply to a client. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="adeeecf4c5aaf8ec49e9ea87be4635639" name="adeeecf4c5aaf8ec49e9ea87be4635639"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adeeecf4c5aaf8ec49e9ea87be4635639">&#9670;&#160;</a></span>replyToClient()</h2>
+<a id="a96304d6dee3f06fda9fa5c41902e0b2b" name="a96304d6dee3f06fda9fa5c41902e0b2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96304d6dee3f06fda9fa5c41902e0b2b">&#9670;&#160;</a></span>replyToClient()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -131,7 +131,13 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>finishedRequests</b></
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>serverNum</em>&#160;</td>
+          <td class="paramname"><em>serverNum</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>maxTime</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -151,6 +157,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>finishedRequests</b></
   <table class="params">
     <tr><td class="paramname">currClockCycle</td><td>The current clock cycle </td></tr>
     <tr><td class="paramname">serverNum</td><td>The number of the server </td></tr>
+    <tr><td class="paramname">maxTime</td><td>The maximum number of clock cycles as specified by the user </td></tr>
   </table>
   </dd>
 </dl>

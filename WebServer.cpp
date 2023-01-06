@@ -26,6 +26,7 @@ public:
     * This function prints a message indicating that the server has finished processing a request if the current clock cycle is greater than the finished time of the current request and the server has active requests. It also decreases the activeRequests field by 1, sets the currRequest field to an empty Request object, and increases the finishedRequests field by 1.
     * @param currClockCycle The current clock cycle
     * @param serverNum The number of the server
+    * @param maxTime The maximum number of clock cycles as specified by the user
      */
     void replyToClient(int currClockCycle, int serverNum, int maxTime)
     {
