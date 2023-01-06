@@ -31,17 +31,20 @@ int main()
     loadBalancer.numRequestsReceived = loadBalancer.queue.size();
     while (!loadBalancer.queue.empty() && loadBalancer.currClockCycle <= loadBalancer.maxClockCycles)
     {
-        loadBalancer.currClockCycle += 2;
+        loadBalancer.currClockCycle += 100;
         // have the load balancer send all requests to available webservers
         loadBalancer.sendToWebserver();
         // check to see if any requests have finished
-        for (int i = 0; i < loadBalancer.webServers.size(); i++) loadBalancer.webServers.at(i).replyToClient(loadBalancer.currClockCycle, i + 1);
-        // randomly choose if a new element should be added if the queue is not full
-        if (getRandomBool() && loadBalancer.queue.size() < numWebServers * 20)
-        {
-            loadBalancer.queue.push(Request(taskLower, taskUpper));
-            loadBalancer.numRequestsReceived += 1;
+        for (int i = 0; i < loadBalancer.webServers.size(); i++) loadBalancer.webServers.at(i).replyToClient(loadBalancer.currClockCycle, i + 1, loadBalancer.maxClockCycles);
+        // randomly choose if new requests should be added if the queue is not full
+        for(int i = 0; i < 2; i++){
+            if (getRandomBool() && loadBalancer.queue.size() < numWebServers * 20)
+            {
+                loadBalancer.queue.push(Request(taskLower, taskUpper));
+                loadBalancer.numRequestsReceived += 1;
+            }
         }
+        
     }
     cout << "Starting Queue size was " << numWebServers * 20 << endl;
     cout << "Ending Queue size was " << loadBalancer.queue.size() << endl;

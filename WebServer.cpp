@@ -27,9 +27,9 @@ public:
     * @param currClockCycle The current clock cycle
     * @param serverNum The number of the server
      */
-    void replyToClient(int currClockCycle, int serverNum)
+    void replyToClient(int currClockCycle, int serverNum, int maxTime)
     {
-        if (currClockCycle > this->finishedTime && this->activeRequests > 0)
+        if (currClockCycle > this->finishedTime && this->activeRequests > 0 && this->finishedTime < maxTime)
         {
             cout << " Server " << serverNum << " finished at clock cycle " << this->finishedTime << " from " << this->currRequest.ipIn << " to " << this->currRequest.ipOut << endl;
             this->activeRequests -= 1;

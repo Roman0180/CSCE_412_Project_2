@@ -1,5 +1,10 @@
 \hypertarget{class_load_balancer}{}\doxysection{Load\+Balancer Class Reference}
 \label{class_load_balancer}\index{LoadBalancer@{LoadBalancer}}
+
+
+This class represents a load balancer for a web server. This class is responsible for managing requests sent to the web server and distributing them to available web servers. It keeps track of the current clock cycle, the maximum number of clock cycles allowed, and the number of requests received. It also has a queue to store incoming requests and a vector of web servers.  
+
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -27,6 +32,9 @@ int {\bfseries max\+Clock\+Cycles}
 int {\bfseries num\+Requests\+Received}
 \begin{DoxyCompactList}\small\item\em The number of requests received. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+This class represents a load balancer for a web server. This class is responsible for managing requests sent to the web server and distributing them to available web servers. It keeps track of the current clock cycle, the maximum number of clock cycles allowed, and the number of requests received. It also has a queue to store incoming requests and a vector of web servers. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_load_balancer_a7ea541dfd2fd3b135c9252e84500f021}\label{class_load_balancer_a7ea541dfd2fd3b135c9252e84500f021}} 

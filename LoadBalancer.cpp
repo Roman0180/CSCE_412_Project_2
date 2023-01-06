@@ -3,8 +3,8 @@
 #include <vector>
 #include <iostream>
 #include "WebServer.cpp"
-/// @brief This class represents a load balancer for a web server. This class is responsible for managing requests sent to the web server and distributing them to available web servers. It keeps track of the current clock cycle, the maximum number of clock cycles allowed, and the number of requests received. It also has a queue to store incoming requests and a vector of web servers.
 using namespace std;
+/// @brief This class represents a load balancer for a web server. This class is responsible for managing requests sent to the web server and distributing them to available web servers. It keeps track of the current clock cycle, the maximum number of clock cycles allowed, and the number of requests received. It also has a queue to store incoming requests and a vector of web servers.
 class LoadBalancer
 {
 public:
@@ -30,7 +30,7 @@ public:
         // if a webserver is available, send a request to it
         for (int i = 0; i < this->webServers.size(); i++)
         {
-            if (this->webServers.at(i).activeRequests < 1)
+            if (this->webServers.at(i).activeRequests < 1 && this->queue.size() > 0)
             {
                 // pop from the queue
                 Request request = this->queue.front();
